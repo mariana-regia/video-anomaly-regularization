@@ -1,0 +1,7 @@
+datasets/
+*.zip
+*.tar
+*.tar.gz
+*.avi
+*.mp4
+*.npy
