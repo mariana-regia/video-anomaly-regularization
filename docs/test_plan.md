@@ -77,6 +77,8 @@ As métricas devem ser analisadas nesta ordem de prioridade:
 
 AUROC e EER permitem aproximação ao protocolo do artigo. AUPRC complementa a análise em dados desbalanceados. Precision, Recall e F1-score descrevem o resultado no threshold adotado, enquanto Accuracy deve ser tratada apenas como diagnóstico.
 
+O threshold de classificação deve ser calibrado no percentil 95 dos scores dos vídeos normais de validação. Depois de calculado, ele é aplicado ao conjunto de teste sem usar seus rótulos nem sua distribuição. Todos os notebooks devem repetir exatamente esse protocolo.
+
 Também devem ser mantidas:
 
 - curvas de loss de treino e validação;
