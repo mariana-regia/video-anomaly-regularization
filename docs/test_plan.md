@@ -39,17 +39,17 @@ Para manter a comparação reproduzível sem treinar com batches compostos por j
 
 ## Notebooks experimentais
 
-Os próximos notebooks serão derivados do notebook base. Cada versão deve alterar apenas uma técnica principal, para permitir comparação isolada.
+Os notebooks experimentais foram derivados do notebook base. Cada versão altera apenas uma técnica principal, para permitir comparação isolada.
 
-Configuração prevista:
+| Notebook | Arquivo | Configuração |
+| --- | --- | --- |
+| Notebook 0 | `DL_UCSD_STAE_Train.ipynb` | Base |
+| Notebook 1 | `DL_UCSD_STAE_01_Early_Stopping.ipynb` | Early Stopping com `patience = 5` e restauração dos melhores pesos |
+| Notebook 2 | `DL_UCSD_STAE_02_Dropout.ipynb` | Spatial Dropout 3D com taxa `0.3` no bottleneck |
+| Notebook 3 | `DL_UCSD_STAE_03_L2.ipynb` | Penalização L2 de `1e-4` nos kernels convolucionais |
+| Notebook 4 | `DL_UCSD_STAE_04_Data_Augmentation.ipynb` | Horizontal flip, brilho/contraste e rotação moderados |
 
-| Notebook | Configuração |
-| --- | --- |
-| Notebook 0 | Base |
-| Notebook 1 | Base + Early Stopping |
-| Notebook 2 | Base + Dropout |
-| Notebook 3 | Base + Weight Decay ou L2 |
-| Notebook 4 | Base + Data Augmentation |
+Cada notebook possui uma seção própria para configurar a técnica antes da construção do modelo. No Data Augmentation, a política usa horizontal flip com probabilidade `0.5`, brilho e contraste no intervalo de `-0.1` a `0.1` com probabilidade `0.3` e rotação entre `-5°` e `5°` com probabilidade `0.2`. O Albumentations reaplica os mesmos parâmetros à entrada, ao alvo de reconstrução e ao alvo de predição. O número e a ordem dos batches permanecem fixos; apenas a transformação aplicada em cada época varia de forma reproduzível a partir da `SEED`.
 
 Outras combinações podem ser criadas depois, mas somente após analisar os resultados individuais.
 
@@ -100,7 +100,6 @@ Para a análise final, o mais importante é verificar quais técnicas melhoram a
 ## Próximas etapas
 
 1. Manter o notebook base como referência.
-2. Criar versões derivadas alterando uma técnica por vez.
-3. Executar os notebooks com o mesmo protocolo.
-4. Registrar métricas, curvas e gráficos.
-5. Comparar os resultados em uma tabela final.
+2. Executar os notebooks derivados com o mesmo protocolo.
+3. Registrar métricas, curvas e gráficos.
+4. Comparar os resultados em uma tabela final.
