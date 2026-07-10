@@ -45,25 +45,18 @@ A batch normalization faz parte da arquitetura-base adotada nos notebooks. As t�
 
 ## Datasets
 
-### UCSD Ped2
+O projeto usa o UCSD Ped2 nos notebooks principais de comparação entre regularizações. O ShanghaiTech permanece como expansão posterior para testar o comportamento do pipeline em um dataset maior e mais diverso.
 
-Dataset piloto usado nos notebooks principais. Ele contém vídeos de pedestres em ambiente de vigilância, treino composto por frames normais e teste com eventos anômalos anotados em nível de frame.
+Resumo do protocolo atual com UCSD Ped2:
 
-Estrutura esperada no ambiente Kaggle usado pelos notebooks:
+- Dataset em uso: UCSD Ped2
+- Vídeos fixos de validação: `Train014`, `Train015` e `Train016`
+- Vídeos de treino: demais sequências normais em `Train/`
+- Vídeos de teste: sequências oficiais em `Test/`
+- Anotações de teste: `Test/UCSDped2.m`
+- Dataset para expansão: ShanghaiTech
 
-```text
-/kaggle/input/datasets/karthiknm1/ucsd-anomaly-detection-dataset/
-└── UCSD_Anomaly_Dataset.v1p2/
-    └── UCSDped2/
-        ├── Train/
-        └── Test/
-```
-
-No protocolo atual, os vídeos `Train014`, `Train015` e `Train016` ficam reservados para validação. Os demais vídeos normais de treino são usados para ajuste do modelo, e os vídeos de teste são avaliados apenas depois da calibração do threshold.
-
-### ShanghaiTech
-
-Dataset planejado para experimentos posteriores em escala maior. Ele oferece maior diversidade de cenas e anotações em arquivos NumPy, mas exige mais custo computacional e organização de dados.
+Para ver links oficiais, caminho esperado no Kaggle, estrutura de pastas, formato dos frames/anotações e alternativas avaliadas, consulte [docs/datasets.md](docs/datasets.md).
 
 ## Como executar
 
