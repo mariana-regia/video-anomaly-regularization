@@ -1,8 +1,5 @@
 # Regularização em Detecção de Anomalias em Vídeos
 
-![Static Badge](https://img.shields.io/badge/Open_in_Colab-373E40?logo=googlecolab)
-![Static Badge](https://img.shields.io/badge/Open_in_Kaggle-373E40?logo=kaggle)
-
 Projeto experimental em Jupyter Notebooks para avaliar como técnicas de regularização afetam um modelo de detecção de anomalias em vídeos. O pipeline usa o UCSD Ped2 como dataset piloto e compara variações controladas de um Spatio-Temporal AutoEncoder (STAE) baseado no artigo [Spatio-Temporal AutoEncoder for Video Anomaly Detection](https://dl.acm.org/doi/10.1145/3123266.3123451).
 
 O objetivo principal não é reproduzir exatamente os resultados publicados no artigo, mas manter um protocolo comparável entre notebooks: mesmo dataset, mesma divisão fixa, mesma arquitetura-base, mesmas métricas e uma técnica de regularização alterada por vez.
@@ -77,14 +74,14 @@ Fluxo recomendado:
 
 ## Notebooks
 
-| Notebook | Arquivo | Configuração |
-| --- | --- | --- |
-| 0 | `src/train/DL_UCSD_STAE_Train.ipynb` | Baseline STAE |
-| 1 | `src/train/DL_UCSD_STAE_01_Early_Stopping.ipynb` | Early stopping com `patience = 5` |
-| 2 | `src/train/DL_UCSD_STAE_02_Dropout.ipynb` | Spatial dropout 3D com taxa `0.3` no bottleneck |
-| 3 | `src/train/DL_UCSD_STAE_03_L2.ipynb` | Penalização L2 `1e-4` nos kernels convolucionais |
-| 4 | `src/train/DL_UCSD_STAE_04_Data_Augmentation.ipynb` | Flip horizontal, brilho/contraste e rotação moderada |
-| ShanghaiTech | `src/train/DL_ShanghaiTech_Train.ipynb` | Notebook inicial para expansão do experimento |
+| Notebook | Arquivo | Configuração | Kaggle |
+| --- | --- | --- | --- |
+| 0 | `src/train/DL_UCSD_STAE_Train.ipynb` | Baseline STAE | [![Open in Kaggle](https://img.shields.io/badge/Open_in_Kaggle-373E40?logo=kaggle&link=https%3A%2F%2Fwww.kaggle.com%2Fcode%2Fmarianaregia%2Fdl-ucsd-stae-train)](https://www.kaggle.com/code/marianaregia/dl-ucsd-stae-train) |
+| 1 | `src/train/DL_UCSD_STAE_01_Early_Stopping.ipynb` | Early stopping com `patience = 5` | [![Open in Kaggle](https://img.shields.io/badge/Open_in_Kaggle-373E40?logo=kaggle&link=https%3A%2F%2Fwww.kaggle.com%2Fcode%2Fmarianaregia%2Fdl-ucsd-stae-01-early-stopping)](https://www.kaggle.com/code/marianaregia/dl-ucsd-stae-01-early-stopping) |
+| 2 | `src/train/DL_UCSD_STAE_02_Dropout.ipynb` | Spatial dropout 3D com taxa `0.3` no bottleneck | [![Open in Kaggle](https://img.shields.io/badge/Open_in_Kaggle-373E40?logo=kaggle&link=https%3A%2F%2Fwww.kaggle.com%2Fcode%2Fmarianaregia%2Fdl-ucsd-stae-02-dropout)](https://www.kaggle.com/code/marianaregia/dl-ucsd-stae-02-dropout) |
+| 3 | `src/train/DL_UCSD_STAE_03_L2.ipynb` | Penalização L2 `1e-4` nos kernels convolucionais | [![Open in Kaggle](https://img.shields.io/badge/Open_in_Kaggle-373E40?logo=kaggle&link=https%3A%2F%2Fwww.kaggle.com%2Fcode%2Fmarianaregia%2Fdl-ucsd-stae-03-l2)](https://www.kaggle.com/code/marianaregia/dl-ucsd-stae-03-l2) |
+| 4 | `src/train/DL_UCSD_STAE_04_Data_Augmentation.ipynb` | Flip horizontal, brilho/contraste e rotação moderada | [![Open in Kaggle](https://img.shields.io/badge/Open_in_Kaggle-373E40?logo=kaggle&link=https%3A%2F%2Fwww.kaggle.com%2Fcode%2Fmarianaregia%2Fdl-ucsd-stae-04-data-augmentation)](https://www.kaggle.com/code/marianaregia/dl-ucsd-stae-04-data-augmentation) |
+| ShanghaiTech | `src/train/DL_ShanghaiTech_Train.ipynb` | Notebook inicial para expansão do experimento | - |
 
 ## Métricas
 
